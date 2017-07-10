@@ -13,7 +13,7 @@ namespace Prowebcraft;
  * Class Data
  * @package Aristos
  */
-class Data extends \Prowebcraft\Dot
+class JsonDb extends \Prowebcraft\Dot
 {
     protected $db = '';
     protected $data = null;
