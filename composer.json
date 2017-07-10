@@ -1,0 +1,20 @@
+{
+    "name": "prowebcraft/php-json-db",
+    "description": "Simple And Flexible database in JSON file",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrey Mistulov",
+            "email": "prowebcraft@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4" : {
+            "Prowebcraft\\" : "src"
+        }
+    },
+    "require": {
+        "prowebcraft/dot": "dev-master"
+    }
+}
