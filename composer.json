@@ -15,6 +15,6 @@
         }
     },
     "require": {
-        "prowebcraft/dot": "dev-master"
+        "prowebcraft/dot": "^0.1.0"
     }
 }
