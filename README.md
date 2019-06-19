@@ -9,7 +9,7 @@ composer require prowebcraft/php-json-db
 #Usage
 Create JsonDb instance
 ```php
-$db = new JsonDb([
+$db = new \Prowebcraft\JsonDb([
   'name' => 'users.json',
   'dir' => getcwd()
 ]);
