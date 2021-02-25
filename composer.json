@@ -15,7 +15,7 @@
         }
     },
     "require": {
-        "prowebcraft/dot": "^0.1.0"
+        "prowebcraft/dot": "@dev"
     },
     "require-dev": {
         "phpunit/phpunit": "*"
