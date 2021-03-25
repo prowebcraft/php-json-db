@@ -36,13 +36,16 @@ class JsonDb extends \Prowebcraft\Dot
      *
      * @param mixed      $key   Path or array of paths and values
      * @param mixed|null $value Value to set if path is not an array
-     * @param bool $save Сохранить данные в базу
+     * @param bool $save Save changes to database
      * @return $this
      */
     public function set($key, $value = null, $save = true)
     {
         parent::set($key, $value);
-        if ($save) $this->save();
+        if ($save) {
+            $this->save();
+        }
+
         return $this;
     }
 
@@ -52,13 +55,16 @@ class JsonDb extends \Prowebcraft\Dot
      * @param mixed $key Path or array of paths and values
      * @param mixed|null $value Value to set if path is not an array
      * @param boolean $pop Helper to pop out last key if value is an array
-     * @param bool $save Сохранить данные в базу
+     * @param bool $save Save changes to database
      * @return $this
      */
     public function add($key, $value = null, $pop = false, $save = true)
     {
         parent::add($key, $value, $pop);
-        if ($save) $this->save();
+        if ($save) {
+            $this->save();
+        }
+
         return $this;
     }
 
@@ -66,13 +72,16 @@ class JsonDb extends \Prowebcraft\Dot
      * Delete path or array of paths
      *
      * @param mixed $key Path or array of paths to delete
-     * @param bool $save Сохранить данные в базу
+     * @param bool $save Save changes to database
      * @return $this
      */
     public function delete($key, $save = true)
     {
         parent::delete($key);
-        if ($save) $this->save();
+        if ($save) {
+            $this->save();
+        }
+
         return $this;
     }
 
@@ -82,13 +91,16 @@ class JsonDb extends \Prowebcraft\Dot
      *
      * @param mixed|null $key Path or array of paths to clean
      * @param boolean $format Format option
-     * @param bool $save Сохранить данные в базу
+     * @param bool $save Save changes to database
      * @return $this
      */
     public function clear($key = null, $format = false, $save = true)
     {
         parent::clear($key, $format);
-        if ($save) $this->save();
+        if ($save) {
+            $this->save();
+        }
+
         return $this;
     }
 
@@ -128,10 +140,11 @@ class JsonDb extends \Prowebcraft\Dot
     }
 
     /**
-     * Сохранение в локальную базу
+     * Save changes to database
+     * @return false|int
      */
     public function save() {
-        file_put_contents($this->db, json_encode($this->data, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));
+        return file_put_contents($this->db, json_encode($this->data, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));
     }
 
 
