@@ -32,6 +32,16 @@ class JsonDb extends \Prowebcraft\Dot
     }
 
     /**
+     * Reload data from file
+     * @return $this
+     */
+    public function reload()
+    {
+        $this->loadData(true);
+        return $this;
+    }
+
+    /**
      * Set value or array of values to path
      *
      * @param mixed      $key   Path or array of paths and values
